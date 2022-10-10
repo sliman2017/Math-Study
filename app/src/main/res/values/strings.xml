@@ -12,7 +12,7 @@
     <string name="dashboard_title">Dashboard App</string>
     <string name="dashboard_heading">Study math and be best scientist of Algeria</string>
     <string name="dashboard_sub_title">380 documents</string>
-    
+
     <string-array name="primary_school">
         <item>First Year</item>
         <item>Second Year</item>
