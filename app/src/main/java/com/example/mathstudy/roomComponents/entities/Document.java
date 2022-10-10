@@ -3,6 +3,7 @@ package com.example.mathstudy.roomComponents.entities;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "documents",
@@ -21,11 +22,11 @@ public class Document {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name="idDocument")
     private int idDocument;
-    @ColumnInfo(name="idCategorie")
+    @ColumnInfo(name="idCategorie", index = true)
     private int idCategorie;
-    @ColumnInfo(name = "idYear")
+    @ColumnInfo(name = "idYear", index = true)
     private int idyear;
-    @ColumnInfo(name = "idSeason")
+    @ColumnInfo(name = "idSeason", index = true)
     private int idSeason;
     @ColumnInfo(name = "title")
     private String title;
@@ -35,6 +36,7 @@ public class Document {
     @ColumnInfo(name = "link")
     private String link;
 
+    @Ignore
     public Document() {
     }
 

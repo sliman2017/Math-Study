@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".activities.Categories">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:fitsSystemWindows="true"
+        android:layout_margin="5dp"
+        app:elevation="0dp"
+        android:background="@drawable/cstm_background"
+        android:theme="@style/AppTheme">
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                app:layout_anchorGravity="end|bottom"
+                android:baselineAlignBottom="false"
+                app:layout_anchor="@id/appbar"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="8dp"
+                app:cardBackgroundColor="#009688"
+                app:cardCornerRadius="10dp" />
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="0dp"
+                android:orientation="horizontal"
+                app:layout_anchorGravity="bottom">
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="220dp">
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:baselineAlignBottom="false"
+                    android:layout_margin="15dp"
+                    android:clickable="true"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="0dp"
+                    app:layout_anchorGravity="end|bottom"
+                    app:cardBackgroundColor="#7EEEAE"
+                    >
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+                        <TextView
+                            android:id="@+id/text3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Backend"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="10dp"
+                            android:textColor="#243C60"
+                            android:textSize="23sp"/>
+                        <TextView
+                            android:id="@+id/text4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="descover"
+                            android:gravity="top"
+                            android:layout_below="@id/text3"
+                            android:layout_marginLeft="15dp"
+                            android:textColor="#243C60"
+                            android:textSize="14sp"/>
+                        <androidx.appcompat.widget.AppCompatImageView
+                        android:src="@drawable/comp1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                            android:layout_margin="12dp"
+                        />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                </androidx.cardview.widget.CardView>
+                    </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="180dp"
+                    android:layout_height="220dp">
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:baselineAlignBottom="false"
+                        android:layout_margin="15dp"
+                        android:clickable="true"
+                        app:cardCornerRadius="10dp"
+                        app:layout_anchorGravity="end|bottom"
+                        app:cardBackgroundColor="#FFEAA4"
+                        >
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+                            <TextView
+                                android:id="@+id/text5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Frontend"
+                                android:textStyle="bold"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:textColor="#243C60"
+                                android:textSize="23sp"/>
+                            <TextView
+                                android:id="@+id/text6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="learn math"
+                                android:gravity="top"
+                                android:layout_below="@id/text3"
+                                android:layout_marginLeft="15dp"
+                                android:textColor="#243C60"
+                                android:textSize="14sp"/>
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:src="@drawable/comp2"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_margin="10dp"
+                                />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                    </androidx.cardview.widget.CardView>
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Categories"
+                android:textColor="#595454"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="23dp"/>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="13dp"
+                android:orientation="horizontal">
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+                <androidx.cardview.widget.CardView
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    android:layout_weight="60"
+                    android:layout_marginBottom="3dp"
+                    app:cardBackgroundColor="#FBE8BF"
+                    app:cardCornerRadius="10dp"
+                    >
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/lessonicon"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="20dp"
+                            android:src="@drawable/orangeicon" />
+
+                        <TextView
+                            android:id="@+id/lessonTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="13dp"
+                            android:layout_toRightOf="@id/lessonicon"
+                            android:text="Lessons"
+                            android:textColor="#595454"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/lessonTitle"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="1dp"
+                            android:layout_toRightOf="@id/lessonicon"
+                            android:text="40 Lessons, 180 Documents"
+                            android:textColor="#7A7373"
+                            android:textSize="15sp" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="3dp"/>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="13dp"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="60"
+                android:layout_marginBottom="3dp"
+                app:cardBackgroundColor="#B0F5F1"
+                app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="370dp"
+                android:layout_height="80dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/exerciceicon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/greenlighticon" />
+                <TextView
+                    android:id="@+id/exerciceTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Exercices"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#595454"
+                    android:layout_toRightOf="@id/exerciceicon"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="13dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/exerciceTitle"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_toRightOf="@id/exerciceicon"
+                    android:text="More than 300 exercices"
+                    android:textColor="#7A7373"
+                    android:textSize="15sp"/>
+
+            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="3dp"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="13dp"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="60"
+                android:layout_marginBottom="3dp"
+                app:cardBackgroundColor="#DCB1F6"
+                app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="370dp"
+                android:layout_height="80dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/examicon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/purpleicon" />
+                <TextView
+                    android:id="@+id/examTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tasks and Solve"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#595454"
+                    android:layout_toRightOf="@id/examicon"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="13dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/examTitle"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_toRightOf="@id/examicon"
+                    android:text="80 exams solved"
+                    android:textColor="#7A7373"
+                    android:textSize="15sp"/>
+
+            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="3dp"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="13dp"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="60"
+                android:layout_marginBottom="3dp"
+                app:cardBackgroundColor="#F4B1BE"
+                app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="370dp"
+                android:layout_height="80dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/shortcuticon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/redicon"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"/>
+                <TextView
+                    android:id="@+id/shortcutTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Exams"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#595454"
+                    android:layout_toRightOf="@id/shortcuticon"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="13dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shortcutTitle"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_toRightOf="@id/shortcuticon"
+                    android:text="enjoi our shortcut documents"
+                    android:textColor="#7A7373"
+                    android:textSize="15sp"/>
+
+            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="3dp"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="13dp"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="60"
+                android:layout_marginBottom="3dp"
+                app:cardBackgroundColor="#FBE8BF"
+                app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="370dp"
+                android:layout_height="80dp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/booksicon"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/orangeicon"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"/>
+                <TextView
+                    android:id="@+id/booksTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Courses"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#595454"
+                    android:layout_toRightOf="@id/booksicon"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="13dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/booksTitle"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_toRightOf="@id/booksicon"
+                    android:text="58 Courses, 930 Tutorial"
+                    android:textColor="#7A7373"
+                    android:textSize="15sp"/>
+
+            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="3dp"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="13dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="13dp"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="60"
+                android:layout_marginBottom="3dp"
+                app:cardBackgroundColor="#B0F5F1"
+                app:cardCornerRadius="10dp">
+
+            <RelativeLayout
+                android:layout_width="370dp"
+                android:layout_height="80dp">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/lessonicon2"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/greenlighticon"
+                    android:layout_marginLeft="20dp"
+                    android:layout_centerVertical="true"/>
+                <TextView
+                    android:id="@+id/lessonTitle2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Lessons"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="#595454"
+                    android:layout_toRightOf="@id/lessonicon2"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="13dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/lessonTitle2"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="1dp"
+                    android:layout_toRightOf="@id/lessonicon2"
+                    android:text="40 Lessons, 180 Documents"
+                    android:textColor="#7A7373"
+                    android:textSize="15sp"/>
+
+            </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginLeft="3dp"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="50dp" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,3 +1,38 @@
 <resources>
     <string name="app_name">MathStudy</string>
+    <string name="school_education">School Education</string>
+    <string name="desc_education">The best app for studying math from your smart phone without any connection with internet</string>
+    <string name="math">Math</string>
+    <string name="physics">Physics</string>
+    <string name="chemistry">Chemistry</string>
+    <string name="desc_math">Study math and be helpful \nthe world is waiting for you</string>
+    <string name="desc_physics">Without physics we wouldn\'t be \nable to have cars</string>
+    <string name="desc_chemistry">The art of chemistry is \nnot just for biologic</string>
+
+    <string name="dashboard_title">Dashboard App</string>
+    <string name="dashboard_heading">Study math and be best scientist of Algeria</string>
+    <string name="dashboard_sub_title">380 documents</string>
+    
+    <string-array name="primary_school">
+        <item>First Year</item>
+        <item>Second Year</item>
+        <item>Third Year</item>
+        <item>Fourth Year</item>
+        <item>Fifth Year</item>
+    </string-array>
+
+    <string-array name="secondary_school">
+        <item>First Year</item>
+        <item>Second Year</item>
+        <item>Third Year</item>
+        <item>Fourth Year</item>
+    </string-array>
+
+    <string-array name="high_school">
+        <item>First Year</item>
+        <item>Second Year</item>
+        <item>Third Year</item>
+    </string-array>
+
+    <string name="mytext">i already have a plan so wait me mom your son is comming to to you with a lot of money and carand beautifull house thanks a lotfor having mebye.hello dearmy name is slimane hamdoui and now i am working on projectthat will save and take to freedom of moneyi will generate more than one million dollar in lessthen one year because i already have a plan sowait me mom your son is comming to to you witha lot of moneyand carand beautifull house thanks a lotfor having mebye.</string>
 </resources>

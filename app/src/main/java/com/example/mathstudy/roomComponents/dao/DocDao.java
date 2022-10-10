@@ -1,14 +1,15 @@
 package com.example.mathstudy.roomComponents.dao;
 
 import androidx.lifecycle.LiveData;
+import androidx.room.Dao;
 import androidx.room.Query;
 
 import com.example.mathstudy.roomComponents.entities.Document;
 
 import java.util.List;
 
-@androidx.room.Dao
-public interface Dao {
+@Dao
+public interface DocDao {
     @Query("SELECT * FROM documents WHERE idCategorie = :idCategorie " +
             "and idYear = :idYear " +
             "and idSeason = :idSeason")

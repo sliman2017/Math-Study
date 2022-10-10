@@ -2,6 +2,7 @@ package com.example.mathstudy.roomComponents.entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "Years")
@@ -13,6 +14,7 @@ public class Year {
     @ColumnInfo(name = "year")
     private String year;
 
+    @Ignore
     public Year() {
     }
 

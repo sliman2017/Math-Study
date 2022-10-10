@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="20dp"
+    tools:context=".activities.Years">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="casual"
+                    android:text="@string/school_education"
+                    android:textColor="@color/black"
+                    android:textSize="38sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="casual"
+                    android:text="@string/desc_education"
+                    android:textColor="@color/gray"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/primary_linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/primary_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="15dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/orange"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/math_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/math"
+                                android:textColor="@color/white"
+                                android:textSize="30sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/math_id"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="3dp"
+                                android:text="@string/desc_math"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/imgButton"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_alignParentRight="true"
+                                android:maxHeight="100dp"
+                                android:src="@drawable/ic_launcher_foreground" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/primary_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:visibility="gone" />
+
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/secondary_linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/secondary_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="15dp">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/red"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/physics_id"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/physics"
+                                android:textColor="@color/white"
+                                android:textSize="30sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/physics_id"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="3dp"
+                                android:text="@string/desc_physics"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_alignParentRight="true"
+                                android:maxHeight="100dp"
+                                android:src="@drawable/ic_launcher_foreground" />
+
+                        </RelativeLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/secondary_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:visibility="gone" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/high_linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/high_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        app:cardCornerRadius="15dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/green_light"
+                            android:padding="10dp">
+
+                            <TextView
+                                android:id="@+id/id2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="10dp"
+                                android:text="@string/chemistry"
+                                android:textColor="@color/white"
+                                android:textSize="30sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/id2"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginTop="3dp"
+                                android:text="@string/desc_chemistry"
+                                android:textColor="@color/white"
+                                android:textSize="16sp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_alignParentRight="true"
+                                android:maxHeight="100dp"
+                                android:src="@drawable/ic_launcher_foreground" />
+
+                        </RelativeLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/high_recycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:visibility="gone" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+</androidx.appcompat.widget.LinearLayoutCompat>

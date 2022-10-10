@@ -14,13 +14,16 @@
         android:theme="@style/Theme.MathStudy"
         tools:targetApi="31">
         <activity
-            android:name=".activities.MainActivity"
+            android:name=".activities.Years"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".activities.Categories"
+            android:exported="true">
         </activity>
     </application>
 

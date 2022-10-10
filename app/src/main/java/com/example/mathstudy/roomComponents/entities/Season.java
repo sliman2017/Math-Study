@@ -2,6 +2,7 @@ package com.example.mathstudy.roomComponents.entities;
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "seasons")
@@ -12,6 +13,7 @@ public class Season {
     @ColumnInfo(name = "season")
     private String season;
 
+    @Ignore
     public Season() {
     }
 
