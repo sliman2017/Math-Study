@@ -40,7 +40,7 @@ public class Years extends AppCompatActivity {
     /**
      * this function will initialize all the xml views in java objects by findViewById function.
      */
-    private void initViews() {
+    private void initViews(){
         setContentView(R.layout.activity_years);
         primaryCardView= (CardView) findViewById(R.id.primary_card);
         primaryLinearLayout = (LinearLayoutCompat) findViewById(R.id.primary_linearLayout);

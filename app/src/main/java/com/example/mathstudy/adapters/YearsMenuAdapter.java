@@ -25,7 +25,6 @@ public class YearsMenuAdapter extends RecyclerView.Adapter<YearsMenuAdapter.View
         public ViewHolder(View view) {
             super(view);
             // Define click listener for the ViewHolder's View
-
             textView = (TextView) view.findViewById(R.id.textView);
         }
 
