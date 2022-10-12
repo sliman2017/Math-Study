@@ -30,6 +30,8 @@ public class Document {
     private int idSeason;
     @ColumnInfo(name = "title")
     private String title;
+    @ColumnInfo(name = "subTitle")
+    private String subTitle;
     @ColumnInfo(name = "pic",
             typeAffinity = ColumnInfo.BLOB)
     private byte[] pic;
@@ -40,12 +42,13 @@ public class Document {
     public Document() {
     }
 
-    public Document(int idDocument, int idCategorie, int idyear, int idSeason, String title, byte[] pic, String link) {
+    public Document(int idDocument, int idCategorie, int idyear, int idSeason, String title,String subTitle, byte[] pic, String link) {
         this.idDocument = idDocument;
         this.idCategorie = idCategorie;
         this.idyear = idyear;
         this.idSeason = idSeason;
         this.title = title;
+        this.subTitle = subTitle;
         this.pic = pic;
         this.link = link;
     }
@@ -88,6 +91,14 @@ public class Document {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getSubTitle() {
+        return subTitle;
+    }
+
+    public void setSubTitle(String subTitle) {
+        this.subTitle = subTitle;
     }
 
     public byte[] getPic() {
