@@ -23,13 +23,17 @@
             android:fitsSystemWindows="true"
             app:contentScrim="@drawable/cstm_bg_document"
             app:layout_scrollFlags="scroll|snap|exitUntilCollapsed"
-            app:title="Hello world">
+            app:title="Hello world"
+            app:expandedTitleTextAppearance="@style/MyExpandedTitle"
+            app:collapsedTitleTextAppearance="@style/MyCollapsedTitle"
+            app:expandedTitleGravity="top|center_horizontal"
+            app:collapsedTitleGravity="start">
 
             <androidx.appcompat.widget.AppCompatImageView
-                android:layout_width="320dp"
-                android:layout_height="200dp"
-                android:layout_gravity="bottom|end"
-                android:layout_marginBottom="15dp"
+                android:layout_width="280dp"
+                android:layout_height="180dp"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/comp1_test"
                 app:layout_collapseMode="parallax" />
 
@@ -63,247 +67,257 @@
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/round_corner_line" />
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/t1_linearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="13dp"
-                    android:orientation="horizontal">
-
-                    <View
-                        android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/t1_linearLayout"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="1" />
+                        android:orientation="vertical">
 
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/t1_card"
-                        android:layout_width="0dp"
-                        android:layout_height="80dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_weight="60"
-                        app:cardBackgroundColor="#B0F5F1"
-                        app:cardCornerRadius="10dp">
-
-                        <RelativeLayout
+                        <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
-                            android:layout_height="80dp">
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="13dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="13dp"
+                            android:orientation="horizontal">
 
-                            <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/t1_documentIcon"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginLeft="20dp"
-                                android:src="@drawable/greenlighticon" />
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
 
-                            <TextView
-                                android:id="@+id/t1_documentTitle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginTop="13dp"
-                                android:layout_toRightOf="@id/t1_documentIcon"
-                                android:text="First Trimester"
-                                android:textColor="#595454"
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/t1_card"
+                                android:layout_width="0dp"
+                                android:layout_height="80dp"
+                                android:layout_marginBottom="3dp"
+                                android:layout_weight="60"
+                                app:cardBackgroundColor="#B0F5F1"
+                                app:cardCornerRadius="10dp">
 
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/t1_documentTitle"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginTop="1dp"
-                                android:layout_toRightOf="@id/t1_documentIcon"
-                                android:text="39 Documents"
-                                android:textColor="#7A7373"
-                                android:textSize="15sp" />
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp">
 
-                    <View
-                        android:layout_width="0dp"
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/t1_documentIcon"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="20dp"
+                                        android:src="@drawable/greenlighticon" />
+
+                                    <TextView
+                                        android:id="@+id/t1_documentTitle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="20dp"
+                                        android:layout_marginTop="13dp"
+                                        android:layout_toRightOf="@id/t1_documentIcon"
+                                        android:text="First Trimester"
+                                        android:textColor="#595454"
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/t1_documentTitle"
+                                        android:layout_marginLeft="20dp"
+                                        android:layout_marginTop="1dp"
+                                        android:layout_toRightOf="@id/t1_documentIcon"
+                                        android:text="39 Documents"
+                                        android:textColor="#7A7373"
+                                        android:textSize="15sp" />
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/t1_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:visibility="gone" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/t2_linearLayout"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="3dp"
-                        android:layout_weight="1" />
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="13dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="13dp"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/t2_card"
+                                android:layout_width="0dp"
+                                android:layout_height="80dp"
+                                android:layout_marginBottom="3dp"
+                                android:layout_weight="60"
+                                app:cardBackgroundColor="#DCB1F6"
+                                app:cardCornerRadius="10dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/t2_documentIcon"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="20dp"
+                                        android:src="@drawable/purpleicon" />
+
+                                    <TextView
+                                        android:id="@+id/t2_documentTitle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="20dp"
+                                        android:layout_marginTop="13dp"
+                                        android:layout_toRightOf="@id/t2_documentIcon"
+                                        android:text="Second Trimester"
+                                        android:textColor="#595454"
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/t2_documentTitle"
+                                        android:layout_marginLeft="20dp"
+                                        android:layout_marginTop="1dp"
+                                        android:layout_toRightOf="@id/t2_documentIcon"
+                                        android:text="29 Documents"
+                                        android:textColor="#7A7373"
+                                        android:textSize="15sp" />
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/t2_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:visibility="gone" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
+                    <androidx.appcompat.widget.LinearLayoutCompat
+                        android:id="@+id/t3_linearLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.LinearLayoutCompat
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="13dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="13dp"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/t3_card"
+                                android:layout_width="0dp"
+                                android:layout_height="80dp"
+                                android:layout_marginBottom="3dp"
+                                android:layout_weight="60"
+                                app:cardBackgroundColor="#FBE8BF"
+                                app:cardCornerRadius="10dp">
+
+                                <RelativeLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="80dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/t3_documentIcon"
+                                        android:layout_width="50dp"
+                                        android:layout_height="50dp"
+                                        android:layout_centerVertical="true"
+                                        android:layout_marginLeft="20dp"
+                                        android:src="@drawable/orangeicon" />
+
+                                    <TextView
+                                        android:id="@+id/t3_documentTitle"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="20dp"
+                                        android:layout_marginTop="13dp"
+                                        android:layout_toRightOf="@id/t3_documentIcon"
+                                        android:text="Third Trimester"
+                                        android:textColor="#595454"
+                                        android:textSize="20sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@id/t3_documentTitle"
+                                        android:layout_marginLeft="20dp"
+                                        android:layout_marginTop="1dp"
+                                        android:layout_toRightOf="@id/t3_documentIcon"
+                                        android:text="83 Documents"
+                                        android:textColor="#7A7373"
+                                        android:textSize="15sp" />
+                                </RelativeLayout>
+                            </androidx.cardview.widget.CardView>
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="3dp"
+                                android:layout_weight="1" />
+                        </androidx.appcompat.widget.LinearLayoutCompat>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/t3_recycler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:visibility="gone" />
+                    </androidx.appcompat.widget.LinearLayoutCompat>
+
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/t1_recycler"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:visibility="gone" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/t2_linearLayout"
+
+            <View
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="13dp"
-                    android:orientation="horizontal">
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/t2_card"
-                        android:layout_width="0dp"
-                        android:layout_height="80dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_weight="60"
-                        app:cardBackgroundColor="#DCB1F6"
-                        app:cardCornerRadius="10dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp">
-
-                            <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/t2_documentIcon"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginLeft="20dp"
-                                android:src="@drawable/purpleicon" />
-
-                            <TextView
-                                android:id="@+id/t2_documentTitle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginTop="13dp"
-                                android:layout_toRightOf="@id/t2_documentIcon"
-                                android:text="Second Trimester"
-                                android:textColor="#595454"
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/t2_documentTitle"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginTop="1dp"
-                                android:layout_toRightOf="@id/t2_documentIcon"
-                                android:text="29 Documents"
-                                android:textColor="#7A7373"
-                                android:textSize="15sp" />
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="3dp"
-                        android:layout_weight="1" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/t2_recycler"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:visibility="gone" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:id="@+id/t3_linearLayout"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-
-                <androidx.appcompat.widget.LinearLayoutCompat
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginRight="13dp"
-                    android:orientation="horizontal">
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                    <androidx.cardview.widget.CardView
-                        android:id="@+id/t3_card"
-                        android:layout_width="0dp"
-                        android:layout_height="80dp"
-                        android:layout_marginBottom="3dp"
-                        android:layout_weight="60"
-                        app:cardBackgroundColor="#FBE8BF"
-                        app:cardCornerRadius="10dp">
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="80dp">
-
-                            <androidx.appcompat.widget.AppCompatImageView
-                                android:id="@+id/t3_documentIcon"
-                                android:layout_width="50dp"
-                                android:layout_height="50dp"
-                                android:layout_centerVertical="true"
-                                android:layout_marginLeft="20dp"
-                                android:src="@drawable/orangeicon" />
-
-                            <TextView
-                                android:id="@+id/t3_documentTitle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginTop="13dp"
-                                android:layout_toRightOf="@id/t3_documentIcon"
-                                android:text="Third Trimester"
-                                android:textColor="#595454"
-                                android:textSize="20sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/t3_documentTitle"
-                                android:layout_marginLeft="20dp"
-                                android:layout_marginTop="1dp"
-                                android:layout_toRightOf="@id/t3_documentIcon"
-                                android:text="83 Documents"
-                                android:textColor="#7A7373"
-                                android:textSize="15sp" />
-                        </RelativeLayout>
-                    </androidx.cardview.widget.CardView>
-
-                    <View
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="3dp"
-                        android:layout_weight="1" />
-                </androidx.appcompat.widget.LinearLayoutCompat>
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/t3_recycler"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:visibility="gone" />
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-
+                android:layout_height="50dp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 

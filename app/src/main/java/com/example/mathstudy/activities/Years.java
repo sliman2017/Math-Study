@@ -95,6 +95,7 @@ public class Years extends AppCompatActivity {
 
     /**
      * this function will fill the recyclerView of level_cards in activity_years.xml layout.
+     * it will attach our adapter to the recyclerView
      * @param level this means one of the three levels years in array of String.
      */
     public void fillRecyclerLevel(RecyclerView recyclerView, String[] level){

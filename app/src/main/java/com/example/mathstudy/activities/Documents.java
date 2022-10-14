@@ -13,16 +13,22 @@ import android.view.View;
 
 import com.example.mathstudy.R;
 import com.example.mathstudy.adapters.DocumentsMenuAdapter;
+import com.example.mathstudy.interfaces.ItemClickListener;
 import com.example.mathstudy.roomComponents.entities.Document;
 
 import java.util.ArrayList;
 
+/**
+ * this class it's an activity that show the all documents for specific categories
+ * for first and second and third trimester
+ */
 public class Documents extends AppCompatActivity {
 
     private ArrayList<Document> t1Documents = new ArrayList<>();
     private CardView t1Card, t2Card, t3Card;
     private RecyclerView t1Recycler, t2Recycler, t3Recycler;
     private LinearLayoutCompat t1LinearLayout, t2LinearLayout, t3LinearLayout;
+    private ItemClickListener itemClickListener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,11 +86,12 @@ public class Documents extends AppCompatActivity {
                 t3Recycler.setVisibility(mv);
             }
         });
+        // TODO: add recyclerOnItemClick listener to open the PDFViewer Activity
     }
 
     /**
-     * this function will fill the data_years from strings.xml ressource and put them in
-     * the array variable that declared above.
+     * this function will fill the documents data from database resource and put them in
+     * the arrayList<Documents> variable that declared above.
      */
     private void setUpDocsModels() {
         t1Documents.add(new Document(1,1,1,1,"The equations", "More than 30 exercices", null, "http://www.mathStudy.com"));
@@ -94,6 +101,14 @@ public class Documents extends AppCompatActivity {
         t1Documents.add(new Document(5,5,5,5,"Geometricue", "More than 4 exercices", null, "http://www.mathStudy.com"));
     }
 
+    /**
+     * this function will attach the adapter to the recyclerView
+     * @param recyclerView this parameter will be the one of these three
+     *                     recycler t1Recycler, t2Recycler or t3Recycler.
+     *                     with t means trimester.
+     * @param documents will be the list of documents for the trimester_1, trimester_2
+     *                  or trimester_3 in the chosen Categories.
+     */
     public void fillRecyclerDocuments(RecyclerView recyclerView, ArrayList<Document> documents){
         DocumentsMenuAdapter adapter = new DocumentsMenuAdapter(documents);
         recyclerView.setAdapter(adapter);

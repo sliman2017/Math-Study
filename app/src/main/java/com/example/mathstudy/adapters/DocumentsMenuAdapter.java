@@ -1,5 +1,6 @@
 package com.example.mathstudy.adapters;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mathstudy.R;
+import com.example.mathstudy.activities.PdfReader;
 import com.example.mathstudy.roomComponents.entities.Document;
 
 import java.util.ArrayList;
@@ -35,6 +37,13 @@ public class DocumentsMenuAdapter extends RecyclerView.Adapter<DocumentsMenuAdap
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.getDocTitle().setText(mDocuments.get(position).getTitle());
         holder.getDocSubTitle().setText(mDocuments.get(position).getSubTitle());
+        holder.getItemCard().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), PdfReader.class);
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override

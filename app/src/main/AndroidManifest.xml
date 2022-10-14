@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.mathstudy">
 
+    <!-- TODO: when the app finished turn the exported attribute for none home_activity to false for security -->
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,12 +15,14 @@
         android:theme="@style/Theme.MathStudy"
         tools:targetApi="31">
         <activity
+            android:name=".activities.PdfReader"
+            android:exported="true" />
+        <activity
             android:name=".activities.Documents"
             android:exported="true" />
         <activity
             android:name=".activities.Years"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".activities.Categories"
             android:exported="true">
