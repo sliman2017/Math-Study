@@ -86,7 +86,6 @@ public class Documents extends AppCompatActivity {
                 t3Recycler.setVisibility(mv);
             }
         });
-        // TODO: add recyclerOnItemClick listener to open the PDFViewer Activity
     }
 
     /**

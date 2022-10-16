@@ -62,6 +62,12 @@ public class YearsMenuAdapter extends RecyclerView.Adapter<YearsMenuAdapter.View
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.getTextView().setText(localDataSet[position]);
+        viewHolder.getTextView().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     // Return the size of your dataset (invoked by the layout manager)

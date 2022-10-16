@@ -9,6 +9,7 @@
     <!-- TODO: search about the definition of hardcoded string -->
     <!-- TODO: search about assets and assets folder in android studio -->
     <!-- TODO: search about the adapter in android studio -->
+    <!-- TODO: search about the testing unit and ... in android studio -->
 
     <com.github.barteksc.pdfviewer.PDFView
         android:id="@+id/pdfViewer"

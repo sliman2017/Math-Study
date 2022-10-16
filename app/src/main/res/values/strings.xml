@@ -2,9 +2,9 @@
     <string name="app_name">MathStudy</string>
     <string name="school_education">School Education</string>
     <string name="desc_education">The best app for studying math from your smart phone without any connection with internet</string>
-    <string name="math">Math</string>
-    <string name="physics">Physics</string>
-    <string name="chemistry">Chemistry</string>
+    <string name="primary_school">Primary School</string>
+    <string name="secondary_school">Secondary School</string>
+    <string name="high_school">High School</string>
     <string name="desc_math">Study math and be helpful \nthe world is waiting for you</string>
     <string name="desc_physics">Without physics we wouldn\'t be \nable to have cars</string>
     <string name="desc_chemistry">The art of chemistry is \nnot just for biologic</string>
@@ -12,6 +12,12 @@
     <string name="dashboard_title">Dashboard App</string>
     <string name="dashboard_heading">Study math and be best scientist of Algeria</string>
     <string name="dashboard_sub_title">380 documents</string>
+
+    <string-array name="level">
+        <item>Primary School</item>
+        <item>Secondary School</item>
+        <item>High School</item>
+    </string-array>
 
     <string-array name="primary_school">
         <item>First Year</item>
