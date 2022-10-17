@@ -7,7 +7,9 @@ import android.os.Bundle;
 import com.example.mathstudy.R;
 import com.github.barteksc.pdfviewer.PDFView;
 
-    // TODO 02: design splash screen with settings
+
+
+    // TODO 02: create Onboarding screen
     // TODO 03: add data placeholder to the database
     // TODO 04: connect the four activity and pass data between them
     // TODO 05: retrive data from the database to the recyclerView items
