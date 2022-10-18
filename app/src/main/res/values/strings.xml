@@ -40,5 +40,19 @@
         <item>Third Year</item>
     </string-array>
 
-    <string name="mytext">i already have a plan so wait me mom your son is comming to to you with a lot of money and carand beautifull house thanks a lotfor having mebye.hello dearmy name is slimane hamdoui and now i am working on projectthat will save and take to freedom of moneyi will generate more than one million dollar in lessthen one year because i already have a plan sowait me mom your son is comming to to you witha lot of moneyand carand beautifull house thanks a lotfor having mebye.</string>
+    <!-- Strings for On Boarding Screen -->
+    <!-- Titles -->
+    <string name="first_slide_title">Math Solver Robot</string>
+    <string name="second_slide_title">Math Quiz</string>
+    <string name="third_slide_title">Documents For download</string>
+
+    <!-- Description -->
+    <string name="first_slide_desc">Here a robot that help solve all kind of math problems and equations.</string>
+    <string name="second_slide_desc">There is a lot of math quiz and questions and equations to solve with reward system</string>
+    <string name="third_slide_desc">In this part you can download lessons and exercices and exams and lot of things in format of pdf.</string>
+    <!-- Buttons -->
+    <string name="skip_btn">Skip</string>
+    <string name="next_btn">Next</string>
+    <string name="let_get_started">Lets Get Started</string>
+
 </resources>
