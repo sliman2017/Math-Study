@@ -1,5 +1,6 @@
 package com.example.mathstudy.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,6 +50,7 @@ public class OnboardingSliderAdapter extends PagerAdapter {
         return view == (ConstraintLayout) object;
     }
 
+    @SuppressLint("SetTextI18n")
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
@@ -56,14 +58,14 @@ public class OnboardingSliderAdapter extends PagerAdapter {
         View view = layoutInflater.inflate(R.layout.slides_layout, container, false);
 
         //hooks
-        ImageView imageView = view.findViewById(R.id.slider_image);
-        TextView heading = view.findViewById(R.id.slider_heading);
-        TextView description = view.findViewById(R.id.slider_desc);
+        ImageView imageView = (ImageView) view.findViewById(R.id.slider_image);
+        TextView heading = (TextView) view.findViewById(R.id.slider_heading);
+        TextView description = (TextView) view.findViewById(R.id.slider_desc);
 
         imageView.setImageResource(images[position]);
-        heading.setText(container.getResources().getString(headings[position]));
+        heading.setText("Hello world");
         description.setText(container.getResources().getString(descriptions[position]));
-        Toast.makeText(context, " "+ container.getResources().getString(headings[position]), Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, "hello world", Toast.LENGTH_SHORT).show();
         container.addView(view);
         return view;
     }
