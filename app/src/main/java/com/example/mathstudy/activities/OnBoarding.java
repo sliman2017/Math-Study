@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -21,7 +23,9 @@ public class OnBoarding extends AppCompatActivity {
     private LinearLayout dotsLayout;
     private TextView[] dots;
     private Button letsGetStarted;
-    OnboardingSliderAdapter sliderAdapter;
+    private OnboardingSliderAdapter sliderAdapter;
+    private Animation animation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,6 +70,8 @@ public class OnBoarding extends AppCompatActivity {
                     letsGetStarted.setVisibility(View.INVISIBLE);
                     break;
                 default:
+                    animation = AnimationUtils.loadAnimation(OnBoarding.this, R.anim.bottom_anim);
+                    letsGetStarted.setAnimation(animation);
                     letsGetStarted.setVisibility(View.VISIBLE);
             }
         }
