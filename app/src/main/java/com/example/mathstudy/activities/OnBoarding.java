@@ -6,6 +6,9 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.os.Bundle;
 import android.text.Html;
+import android.view.View;
+import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -14,17 +17,20 @@ import com.example.mathstudy.adapters.OnboardingSliderAdapter;
 
 public class OnBoarding extends AppCompatActivity {
 
-    ViewPager viewPager;
-    LinearLayout dotsLayout;
-    TextView[] dots;
+    private ViewPager viewPager;
+    private LinearLayout dotsLayout;
+    private TextView[] dots;
+    private Button letsGetStarted;
     OnboardingSliderAdapter sliderAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().setFlags (WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN) ;
         setContentView(R.layout.activity_on_boarding);
         //hooks
         viewPager = (ViewPager) findViewById(R.id.slider);
         dotsLayout = (LinearLayout) findViewById(R.id.dots);
+        letsGetStarted = (Button) findViewById(R.id.get_started_btn);
         //call adapter
         sliderAdapter = new OnboardingSliderAdapter(this);
         viewPager.setAdapter(sliderAdapter);
@@ -54,6 +60,14 @@ public class OnBoarding extends AppCompatActivity {
         @Override
         public void onPageSelected(int position) {
             addDots(position);
+            switch (position){
+                case 0:
+                case 1:
+                    letsGetStarted.setVisibility(View.INVISIBLE);
+                    break;
+                default:
+                    letsGetStarted.setVisibility(View.VISIBLE);
+            }
         }
 
         @Override

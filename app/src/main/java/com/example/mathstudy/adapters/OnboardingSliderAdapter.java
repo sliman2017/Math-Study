@@ -63,8 +63,8 @@ public class OnboardingSliderAdapter extends PagerAdapter {
         TextView description = (TextView) view.findViewById(R.id.slider_desc);
 
         imageView.setImageResource(images[position]);
-        heading.setText("Hello world");
-        description.setText(container.getResources().getString(descriptions[position]));
+        heading.setText(headings[position]);
+        description.setText(descriptions[position]);
         Toast.makeText(context, "hello world", Toast.LENGTH_SHORT).show();
         container.addView(view);
         return view;
