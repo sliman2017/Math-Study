@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -25,6 +26,8 @@ public class OnBoarding extends AppCompatActivity {
     private Button letsGetStarted;
     private OnboardingSliderAdapter sliderAdapter;
     private Animation animation;
+    private Button skipButton, nextButton;
+    private int currentPos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,12 +38,31 @@ public class OnBoarding extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.slider);
         dotsLayout = (LinearLayout) findViewById(R.id.dots);
         letsGetStarted = (Button) findViewById(R.id.get_started_btn);
+        skipButton = (Button) findViewById(R.id.skip_btn);
+        nextButton = (Button) findViewById(R.id.next_btn);
         //call adapter
         sliderAdapter = new OnboardingSliderAdapter(this);
         viewPager.setAdapter(sliderAdapter);
         addDots(0);
         viewPager.addOnPageChangeListener(changeListener);
+
+        //listeners
+        skipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), Categories.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(currentPos + 1);
+            }
+        });
     }
+
 
     private void addDots (int position){
         dots = new TextView[4];
@@ -64,13 +86,14 @@ public class OnBoarding extends AppCompatActivity {
         @Override
         public void onPageSelected(int position) {
             addDots(position);
+            currentPos = position;
             switch (position){
                 case 0:
                 case 1:
                     letsGetStarted.setVisibility(View.INVISIBLE);
                     break;
                 default:
-                    animation = AnimationUtils.loadAnimation(OnBoarding.this, R.anim.bottom_anim);
+                    animation = AnimationUtils.loadAnimation(OnBoarding.this, R.anim.side_anim);
                     letsGetStarted.setAnimation(animation);
                     letsGetStarted.setVisibility(View.VISIBLE);
             }

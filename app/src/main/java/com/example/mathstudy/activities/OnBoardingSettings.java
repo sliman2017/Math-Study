@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.example.mathstudy.R;
 import com.example.mathstudy.adapters.YearsMenuAdapter;
 
-public class FirstPage extends AppCompatActivity {
+public class OnBoardingSettings extends AppCompatActivity {
 
     private String[] levels, years;
     private AutoCompleteTextView autoCompleteTextViewLevel, autoCompleteTextViewYear;

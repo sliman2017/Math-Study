@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.SplashScreen"
+    android:orientation="vertical"
+    android:background="#AA3930">
+
+    <ImageView
+        android:id="@+id/imageSplash"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
+        android:layout_weight="1"
+        android:src="@drawable/make_a_call"/>
+
+    <TextView
+        android:id="@+id/logoSplash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Make Your Call"
+        android:layout_marginTop="40dp"
+        android:textColor="#FFC107"
+        android:textSize="40sp"
+        app:fontFamily="@font/bangers" />
+
+    <TextView
+        android:id="@+id/sloganSplash"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_weight="1"
+        android:gravity="center_horizontal"
+        android:text="make your call so easy with our technologie"
+        android:textColor="#9AFFEB3B"
+        android:textSize="20sp"
+        app:fontFamily="@font/advent_pro_bold" />
+</androidx.appcompat.widget.LinearLayoutCompat>
