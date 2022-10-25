@@ -14,15 +14,15 @@ import java.util.List;
 public class DocumentViewModel extends AndroidViewModel {
 
     private DocumentsRepository mRepository;
-    private LiveData<List<Document>> mDocuments;
+    private final List<Document> mDocuments;
 
-    public DocumentViewModel(@NonNull Application application) {
+    public DocumentViewModel(@NonNull Application application, int idCat, int idYear, int idSeason) {
         super(application);
-        mRepository = new DocumentsRepository(application);
-        mDocuments = null;
+        // TODO: add params to this function idYear, idCat, idSeason
+        mRepository = new DocumentsRepository(application, idCat, idYear, idSeason);
+        mDocuments = mRepository.getmAllDocuments();
     }
-    LiveData<List<Document>> getmDocuments(int idCat, int idYear, int idSeason){
-        mDocuments = mRepository.getmAllDocuments(idCat, idYear, idSeason);
+    public List<Document> getmAllDocuments(){
         return mDocuments;
     }
 }

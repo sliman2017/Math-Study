@@ -5,6 +5,7 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
@@ -17,8 +18,13 @@ import android.widget.TextView;
 
 import com.example.mathstudy.R;
 import com.example.mathstudy.adapters.OnboardingSliderAdapter;
+import com.example.mathstudy.interfaces.ActivityInitializer;
 
-public class OnBoarding extends AppCompatActivity {
+/**
+ * this activity is about the onBoarding screen that
+ * use viewPager, adapter and layout_item.xml
+ */
+public class OnBoarding extends AppCompatActivity implements ActivityInitializer {
 
     private ViewPager viewPager;
     private LinearLayout dotsLayout;
@@ -33,37 +39,23 @@ public class OnBoarding extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWindow().setFlags (WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN) ;
-        setContentView(R.layout.activity_on_boarding);
-        //hooks
-        viewPager = (ViewPager) findViewById(R.id.slider);
-        dotsLayout = (LinearLayout) findViewById(R.id.dots);
-        letsGetStarted = (Button) findViewById(R.id.get_started_btn);
-        skipButton = (Button) findViewById(R.id.skip_btn);
-        nextButton = (Button) findViewById(R.id.next_btn);
+
+        initViews();
+        initListeners();
         //call adapter
         sliderAdapter = new OnboardingSliderAdapter(this);
         viewPager.setAdapter(sliderAdapter);
         addDots(0);
         viewPager.addOnPageChangeListener(changeListener);
-
-        //listeners
-        skipButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getBaseContext(), Categories.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-        nextButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                viewPager.setCurrentItem(currentPos + 1);
-            }
-        });
     }
 
 
+    /**
+     * this function will add the four dots in the bottom of the
+     * onBoarding screen that refers to current onBoarding page
+     * note: page is one of onBoarding screen pages
+     * @param position this parameter refers to the current position of onBoarding page
+     */
     private void addDots (int position){
         dots = new TextView[4];
         dotsLayout.removeAllViews();
@@ -104,4 +96,52 @@ public class OnBoarding extends AppCompatActivity {
 
         }
     };
+
+    @Override
+    public void initViews() {
+        setContentView(R.layout.activity_on_boarding);
+        //hooks
+        viewPager = (ViewPager) findViewById(R.id.slider);
+        dotsLayout = (LinearLayout) findViewById(R.id.dots);
+        letsGetStarted = (Button) findViewById(R.id.get_started_btn);
+        skipButton = (Button) findViewById(R.id.skip_btn);
+        nextButton = (Button) findViewById(R.id.next_btn);
+    }
+
+    @Override
+    public void initListeners() {
+        //listeners
+        skipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getBaseContext(), OnBoardingSettings.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                viewPager.setCurrentItem(currentPos + 1);
+            }
+        });
+        letsGetStarted.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(OnBoarding.this, OnBoardingSettings.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
+    @Override
+    public void initVars() {
+
+    }
+
+    @Override
+    public void initFunctionality() {
+
+    }
 }

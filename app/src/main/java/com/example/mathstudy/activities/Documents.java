@@ -3,20 +3,25 @@ package com.example.mathstudy.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.cardview.widget.CardView;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import com.example.mathstudy.R;
 import com.example.mathstudy.adapters.DocumentsMenuAdapter;
 import com.example.mathstudy.interfaces.ItemClickListener;
 import com.example.mathstudy.roomComponents.entities.Document;
+import com.example.mathstudy.viewModel.DocumentViewModel;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * this class it's an activity that show the all documents for specific categories
@@ -29,12 +34,18 @@ public class Documents extends AppCompatActivity {
     private RecyclerView t1Recycler, t2Recycler, t3Recycler;
     private LinearLayoutCompat t1LinearLayout, t2LinearLayout, t3LinearLayout;
     private ItemClickListener itemClickListener;
+    private int mSchoolLevel;
+    private int mCategorie;
+    private DocumentViewModel documentViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initViews();
         initListeners();
+        dataReceiver();
+        // TODO: retrieve images from sqlite room databases and put in the next line
+        t1Documents.addAll(getAllDocuments(mCategorie, mSchoolLevel, 1));
         setUpDocsModels();
         fillRecyclerDocuments(t1Recycler, t1Documents);
         fillRecyclerDocuments(t2Recycler, t1Documents);
@@ -89,7 +100,7 @@ public class Documents extends AppCompatActivity {
     }
 
     /**
-     * this function will fill the documents data from database resource and put them in
+     * this function will fill the documents data from databases resource and put them in
      * the arrayList<Documents> variable that declared above.
      */
     private void setUpDocsModels() {
@@ -113,4 +124,35 @@ public class Documents extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
+
+    /**
+     * this function will receive the data which is (Level and Year) from sharedPreferences
+     * and the Intent coming from categories which is (Categories type)
+     */
+    public void dataReceiver(){
+        Bundle extras = getIntent().getExtras();
+        if(extras !=null) {
+            mCategorie = extras.getInt("lessons");
+        }
+        SharedPreferences schoolLevel = getSharedPreferences("schoolLevel", MODE_PRIVATE);
+        mSchoolLevel = schoolLevel.getInt("mySchoolLevel", 0);
+
+    }
+
+    /**
+     * this function will get all Documents from databases passed by the viewModel class(DocumentViewModel.class)
+     * and filtered by Categories, School_Level and Season;
+     * @param idCategorie
+     * @param myLevel
+     * @param idSeason
+     * @return it convert the liveData to arrayList and return it.
+     */
+    public ArrayList<Document> getAllDocuments(int idCategorie, int myLevel, int idSeason){
+        documentViewModel = new ViewModelProvider(this).get(DocumentViewModel.class);
+        List<Document> mData = documentViewModel.getmAllDocuments();
+        ArrayList<Document> mDataArrayList = new ArrayList<>();
+        mDataArrayList.addAll(mData);
+        return mDataArrayList;
+    }
+
 }

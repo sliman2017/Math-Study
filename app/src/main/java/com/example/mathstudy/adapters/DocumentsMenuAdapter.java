@@ -37,6 +37,7 @@ public class DocumentsMenuAdapter extends RecyclerView.Adapter<DocumentsMenuAdap
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.getDocTitle().setText(mDocuments.get(position).getTitle());
         holder.getDocSubTitle().setText(mDocuments.get(position).getSubTitle());
+        //holder.docIcon.setImageBitmap(mDocuments.get(position).getPic());
         holder.getItemCard().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

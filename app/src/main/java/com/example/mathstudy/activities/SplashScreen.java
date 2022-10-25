@@ -3,6 +3,7 @@ package com.example.mathstudy.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
@@ -16,6 +17,7 @@ import com.example.mathstudy.R;
 public class SplashScreen extends AppCompatActivity {
 
     private static int SPLASH_SCREEN = 5000;
+    SharedPreferences onBoardingScreenSharedPref;
 
     private Animation topAnimation, bottomAnimation;
     private ImageView imageSplash;
@@ -41,9 +43,23 @@ public class SplashScreen extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(SplashScreen.this, OnBoarding.class);
-                startActivity(intent);
-                finish();
+                onBoardingScreenSharedPref = getSharedPreferences("onBoardingScreen", MODE_PRIVATE);
+                boolean isFirstTime = onBoardingScreenSharedPref.getBoolean("firstTime", true);
+
+                if (isFirstTime) {
+                    SharedPreferences.Editor editor = onBoardingScreenSharedPref.edit();
+                    editor.putBoolean("firstTime", false);
+                    editor.commit();
+
+                    Intent intent = new Intent(SplashScreen.this, OnBoarding.class);
+                    startActivity(intent);
+                    finish();
+                }else {
+                    Intent intent = new Intent(SplashScreen.this, Categories.class);
+                    startActivity(intent);
+                    finish();
+                }
+
             }
         }, SPLASH_SCREEN);
     }

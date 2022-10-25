@@ -10,8 +10,9 @@ import java.util.List;
 
 @Dao
 public interface DocDao {
-    @Query("SELECT * FROM documents WHERE idCategorie = :idCategorie " +
+    @Query("SELECT * FROM Documents WHERE idCategorie = :idCategorie " +
             "and idYear = :idYear " +
             "and idSeason = :idSeason")
-    LiveData<List<Document>> getDocuments(int idCategorie, int idYear, int idSeason);
+    List<Document> getDocuments(int idCategorie, int idYear, int idSeason);
+    // TODO: fetch data from sqlite databases room to recyclerView in Documents Activity
 }

@@ -5,20 +5,20 @@ import android.app.Application;
 import androidx.lifecycle.LiveData;
 
 import com.example.mathstudy.roomComponents.dao.DocDao;
-import com.example.mathstudy.roomComponents.database.RoomDatabase;
+import com.example.mathstudy.roomComponents.database.MathRoomDatabase;
 import com.example.mathstudy.roomComponents.entities.Document;
 
 import java.util.List;
 
 public class DocumentsRepository {
     private DocDao mDocDao;
-    private LiveData<List<Document>> mAllDocuments;
-    public DocumentsRepository(Application application) {
-        RoomDatabase database = RoomDatabase.getDatabase(application);
+    private List<Document> mAllDocuments;
+    public DocumentsRepository(Application application, int idCat, int idYear, int idSeason) {
+        MathRoomDatabase database = MathRoomDatabase.getDatabase(application);
         mDocDao = (DocDao) database.DocDao();
-        mAllDocuments = null;
+        mAllDocuments = mDocDao.getDocuments(idCat, idYear, idSeason);
     }
-    public LiveData<List<Document>> getmAllDocuments(int idCat, int idYear, int idSeason){
-        return mDocDao.getDocuments(idCat, idYear, idSeason);
+    public List<Document> getmAllDocuments(){
+        return mAllDocuments;
     }
 }

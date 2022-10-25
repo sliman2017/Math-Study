@@ -152,7 +152,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Categories"
-                android:textColor="#595454"
+                android:textColor="#243C60"
                 android:textSize="23sp"
                 android:textStyle="bold"
                 android:layout_marginLeft="23dp"/>
@@ -169,6 +169,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"/>
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/lessons_cardView"
                     android:layout_width="0dp"
                     android:layout_height="80dp"
                     android:layout_weight="60"
@@ -233,6 +234,7 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
             <androidx.cardview.widget.CardView
+                android:id="@+id/exercices_cardView"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:layout_weight="60"
