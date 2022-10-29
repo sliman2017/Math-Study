@@ -3,7 +3,7 @@ package com.example.mathstudy.activities;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.LinearLayoutCompat;
 import androidx.cardview.widget.CardView;
-import androidx.lifecycle.ViewModelProvider;
+import androidx.lifecycle.LiveData;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.AutoTransition;
@@ -11,7 +11,6 @@ import androidx.transition.TransitionManager;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
 import com.example.mathstudy.R;
@@ -44,7 +43,7 @@ public class Documents extends AppCompatActivity {
         initViews();
         initListeners();
         dataReceiver();
-        // TODO: retrieve images from sqlite room databases and put in the next line
+        // TODO: retrieve images from sqlite room database and put in the next line
         t1Documents.addAll(getAllDocuments(mCategorie, mSchoolLevel, 1));
         setUpDocsModels();
         fillRecyclerDocuments(t1Recycler, t1Documents);
@@ -100,8 +99,8 @@ public class Documents extends AppCompatActivity {
     }
 
     /**
-     * this function will fill the documents data from databases resource and put them in
-     * the arrayList<Documents> variable that declared above.
+     * this function will fill the documents data from database resource and put them in
+     * the arrayList<Document> variable that declared above.
      */
     private void setUpDocsModels() {
         t1Documents.add(new Document(1,1,1,1,"The equations", "More than 30 exercices", null, "http://www.mathStudy.com"));
@@ -117,7 +116,7 @@ public class Documents extends AppCompatActivity {
      *                     recycler t1Recycler, t2Recycler or t3Recycler.
      *                     with t means trimester.
      * @param documents will be the list of documents for the trimester_1, trimester_2
-     *                  or trimester_3 in the chosen Categories.
+     *                  or trimester_3 in the chosen Categorie.
      */
     public void fillRecyclerDocuments(RecyclerView recyclerView, ArrayList<Document> documents){
         DocumentsMenuAdapter adapter = new DocumentsMenuAdapter(documents);
@@ -127,7 +126,7 @@ public class Documents extends AppCompatActivity {
 
     /**
      * this function will receive the data which is (Level and Year) from sharedPreferences
-     * and the Intent coming from categories which is (Categories type)
+     * and the Intent coming from categories which is (Categorie type)
      */
     public void dataReceiver(){
         Bundle extras = getIntent().getExtras();
@@ -140,15 +139,15 @@ public class Documents extends AppCompatActivity {
     }
 
     /**
-     * this function will get all Documents from databases passed by the viewModel class(DocumentViewModel.class)
-     * and filtered by Categories, School_Level and Season;
+     * this function will get all Document from database passed by the viewModel class(DocumentViewModel.class)
+     * and filtered by Categorie, School_Level and Season;
      * @param idCategorie
      * @param myLevel
      * @param idSeason
      * @return it convert the liveData to arrayList and return it.
      */
     public ArrayList<Document> getAllDocuments(int idCategorie, int myLevel, int idSeason){
-        documentViewModel = new ViewModelProvider(this).get(DocumentViewModel.class);
+        documentViewModel = new DocumentViewModel(getApplication(), idCategorie, myLevel, idSeason);
         List<Document> mData = documentViewModel.getmAllDocuments();
         ArrayList<Document> mDataArrayList = new ArrayList<>();
         mDataArrayList.addAll(mData);

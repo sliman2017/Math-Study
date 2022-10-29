@@ -10,9 +10,9 @@ import java.util.List;
 
 @Dao
 public interface DocDao {
-    @Query("SELECT * FROM Documents WHERE idCategorie = :idCategorie " +
-            "and idYear = :idYear " +
-            "and idSeason = :idSeason")
+    @Query("SELECT * FROM Documents WHERE idCategorie == :idCategorie " +
+            "and idYear == :idYear " +
+            "and idSeason == :idSeason")
     List<Document> getDocuments(int idCategorie, int idYear, int idSeason);
-    // TODO: fetch data from sqlite databases room to recyclerView in Documents Activity
+    // TODO: fetch data from sqlite database room to recyclerView in Document Activity
 }

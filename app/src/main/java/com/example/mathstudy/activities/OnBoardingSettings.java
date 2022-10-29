@@ -6,6 +6,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -88,8 +89,9 @@ public class OnBoardingSettings extends AppCompatActivity {
                 schoolLevelSharedPref = getSharedPreferences("schoolLevel", MODE_PRIVATE);
                 SharedPreferences.Editor myEdit = schoolLevelSharedPref.edit();
                 myEdit.putInt("mySchoolLevel", getSchoolLevel(mLevel, mYear));
-
-                //this lines will open Categories.class and close the current one.
+                myEdit.commit();
+                Log.v("from settings", "the level is: "+getSchoolLevel(mLevel, mYear));
+                //this lines will open Categorie.class and close the current one.
                 Intent intent = new Intent(OnBoardingSettings.this, Categories.class);
                 startActivity(intent);
                 finish();
@@ -118,7 +120,7 @@ public class OnBoardingSettings extends AppCompatActivity {
     }
 
     /**
-     * this function will return the databases string of schoolLevel after concatenate level string
+     * this function will return the database string of schoolLevel after concatenate level string
      * and the year string.
      * @param level
      * @param year
@@ -134,16 +136,16 @@ public class OnBoardingSettings extends AppCompatActivity {
                 case "Second Year":
                     schoolLevel = 2;
                     break;
-                case "third Year":
+                case "Third Year":
                     schoolLevel = 3;
                     break;
-                case "fourth Year":
+                case "Fourth Year":
                     schoolLevel = 4;
                     break;
-                case "fifth Year":
+                case "Fifth Year":
                     schoolLevel = 5;
                     break;
-                case "six Year":
+                case "Six Year":
                     schoolLevel = 6;
                     break;
                 default:
@@ -158,7 +160,7 @@ public class OnBoardingSettings extends AppCompatActivity {
                 case "Second Year":
                     schoolLevel = 8;
                     break;
-                case "third Year":
+                case "Third Year":
                     schoolLevel = 9;
                     break;
                 default:
@@ -172,7 +174,7 @@ public class OnBoardingSettings extends AppCompatActivity {
                 case "Second Year":
                     schoolLevel = 11;
                     break;
-                case "third Year":
+                case "Third Year":
                     schoolLevel = 12;
                     break;
                 default:

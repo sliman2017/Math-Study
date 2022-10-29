@@ -1,5 +1,6 @@
 package com.example.mathstudy.roomComponents.entities;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
@@ -20,6 +21,7 @@ import androidx.room.PrimaryKey;
         })
 public class Document {
     @PrimaryKey(autoGenerate = true)
+    @NonNull
     @ColumnInfo(name="idDocument")
     private int idDocument;
     @ColumnInfo(name="idCategorie", index = true)
@@ -42,7 +44,7 @@ public class Document {
     public Document() {
     }
 
-    public Document(int idDocument, int idCategorie, int idyear, int idSeason, String title,String subTitle, byte[] pic, String link) {
+    public Document(int idDocument, int idCategorie, int idyear, int idSeason, String title, String subTitle, byte[] pic, String link) {
         this.idDocument = idDocument;
         this.idCategorie = idCategorie;
         this.idyear = idyear;

@@ -1,13 +1,15 @@
 package com.example.mathstudy.roomComponents.entities;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "seasons")
+@Entity(tableName = "Seasons")
 public class Season {
     @PrimaryKey(autoGenerate = true)
+    @NonNull
     @ColumnInfo(name = "idSeason")
     private int idSeason;
     @ColumnInfo(name = "season")

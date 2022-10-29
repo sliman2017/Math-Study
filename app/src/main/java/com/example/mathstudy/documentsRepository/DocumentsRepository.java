@@ -1,6 +1,8 @@
 package com.example.mathstudy.documentsRepository;
 
 import android.app.Application;
+import android.content.Context;
+import android.util.Log;
 
 import androidx.lifecycle.LiveData;
 
@@ -15,8 +17,10 @@ public class DocumentsRepository {
     private List<Document> mAllDocuments;
     public DocumentsRepository(Application application, int idCat, int idYear, int idSeason) {
         MathRoomDatabase database = MathRoomDatabase.getDatabase(application);
-        mDocDao = (DocDao) database.DocDao();
+        mDocDao = database.DocDao();
         mAllDocuments = mDocDao.getDocuments(idCat, idYear, idSeason);
+        Log.v("my documents", "the size is: "+mAllDocuments.size());
+        Log.v("my params", " the params is: "+idCat+", "+idYear+", "+idSeason);
     }
     public List<Document> getmAllDocuments(){
         return mAllDocuments;

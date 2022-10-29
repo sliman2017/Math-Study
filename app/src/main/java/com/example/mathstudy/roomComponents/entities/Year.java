@@ -4,24 +4,22 @@ import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 import java.security.KeyStore;
 
 @Entity(tableName = "Years")
+//@Entity(tableName = "Year", indices={@Index(value="idYear", unique=true)})
 public class Year {
 
+    // FIXME: this @NonNull annotation doesn't work i have to fixe it
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "idYear")
-    // FIXME: this @NonNull annotation doesn't work i have to fixe it
     private int idYear;
     @ColumnInfo(name = "year")
     private String year;
-
-    @Ignore
-    public Year() {
-    }
 
     public Year(@NonNull int idYear, String year) {
         this.idYear = idYear;

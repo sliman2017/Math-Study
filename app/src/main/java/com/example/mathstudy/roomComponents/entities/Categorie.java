@@ -1,13 +1,15 @@
 package com.example.mathstudy.roomComponents.entities;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "categories")
+@Entity(tableName = "Categories")
 public class Categorie {
     @PrimaryKey(autoGenerate = true)
+    @NonNull
     @ColumnInfo(name = "idCategorie")
     private int idCategorie;
     @ColumnInfo(name = "categorie")

@@ -1,8 +1,8 @@
 package com.example.mathstudy.roomComponents.dao;
 
 import android.content.Context;
+import android.util.Log;
 
-import androidx.lifecycle.LiveData;
 import androidx.room.Room;
 import androidx.test.core.app.ApplicationProvider;
 
@@ -16,6 +16,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.robolectric.RobolectricTestRunner;
+import org.robolectric.annotation.Config;
 
 import java.io.IOException;
 import java.util.List;
@@ -28,8 +29,8 @@ public class DocDaoTest extends TestCase {
     @Before
     public void connectDB(){
     Context context = ApplicationProvider.getApplicationContext();
-        mathRoomDatabase = Room.databaseBuilder(context, MathRoomDatabase.class, "document_database")
-                .createFromAsset("databases/document_database.db")
+        mathRoomDatabase = Room.databaseBuilder(context, MathRoomDatabase.class, "myDB.db")
+                .createFromAsset("database/myDB.db").allowMainThreadQueries()
                 .build();
         documentDao = mathRoomDatabase.DocDao();
     }
@@ -41,10 +42,11 @@ public class DocDaoTest extends TestCase {
 
     @Test
     public void readAllDocumentsInList()throws Exception{
+
         List<Document> myDocumentsLiveData = documentDao.getDocuments(1,1,1);
         assertEquals(myDocumentsLiveData.size(), 1);
     }
 
-    // TODO: test the connection between the sqlite databases and the java code
+    // TODO: test the connection between the sqlite database and the java code
 
 }

@@ -16,11 +16,14 @@ public class Categories extends AppCompatActivity implements ActivityInitializer
 
     private CardView lessonsCardView, exercicesCardView;
     private int myLevel;
+    SharedPreferences schoolSharedPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initViews();
         initListeners();
+        schoolSharedPref= getSharedPreferences("schoolLevel", MODE_PRIVATE);
+        myLevel = schoolSharedPref.getInt("mySchoolLevel", 0 );
         Log.v("shcoolLevel", "the level is: " + myLevel);
     }
 
@@ -60,7 +63,7 @@ public class Categories extends AppCompatActivity implements ActivityInitializer
         super.onResume();
         // Fetching the stored data
         // from the SharedPreference
-        SharedPreferences schoolSharedPref = getSharedPreferences("schoolLevel", MODE_PRIVATE);
+        schoolSharedPref= getSharedPreferences("schoolLevel", MODE_PRIVATE);
         myLevel = schoolSharedPref.getInt("mySchoolLevel", 0 );
 
     }
