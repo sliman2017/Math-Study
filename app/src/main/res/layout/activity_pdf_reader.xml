@@ -11,10 +11,14 @@
     <!-- TODO: search about the adapter in android studio -->
     <!-- TODO: search about the testing unit and ... in android studio -->
 
-    <com.github.barteksc.pdfviewer.PDFView
-        android:id="@+id/pdfViewer"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+<!--    <com.github.barteksc.pdfviewer.PDFView-->
+<!--        android:id="@+id/pdfViewer"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
 
-    </com.github.barteksc.pdfviewer.PDFView>
+<!--    </com.github.barteksc.pdfviewer.PDFView>-->
+    <WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/webView"/>
 </RelativeLayout>
