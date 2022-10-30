@@ -37,7 +37,7 @@ public abstract class MathRoomDatabase extends RoomDatabase {
                             .build();
                        Log.v("mathRoomDatabase: ", " slimane: "+INSTANCE.DocDao().getDocuments(1,1,1).size());
                        Log.v("mathRoomDatabase: ", " slimane2: "+INSTANCE.DocDao().getDocuments(1,1,1).get(1).getTitle());
-                // Fixme: From this point of function by using log.v we ensure that the database is connected and return data
+                       // Fixme: From this point of function by using log.v we ensure that the database is connected and return data
                 }
             }
         }

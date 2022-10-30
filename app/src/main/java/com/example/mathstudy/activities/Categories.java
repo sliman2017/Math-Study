@@ -40,7 +40,6 @@ public class Categories extends AppCompatActivity implements ActivityInitializer
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Categories.this, Documents.class);
-                // TODO: open pass data from categories to document and open it.
                 intent.putExtra("lessons", 6);
                 startActivity(intent);
                 finish();

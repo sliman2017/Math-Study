@@ -13,7 +13,6 @@ import java.security.KeyStore;
 //@Entity(tableName = "Year", indices={@Index(value="idYear", unique=true)})
 public class Year {
 
-    // FIXME: this @NonNull annotation doesn't work i have to fixe it
     @PrimaryKey(autoGenerate = true)
     @NonNull
     @ColumnInfo(name = "idYear")

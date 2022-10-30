@@ -14,5 +14,4 @@ public interface DocDao {
             "and idYear == :idYear " +
             "and idSeason == :idSeason")
     List<Document> getDocuments(int idCategorie, int idYear, int idSeason);
-    // TODO: fetch data from sqlite database room to recyclerView in Document Activity
 }

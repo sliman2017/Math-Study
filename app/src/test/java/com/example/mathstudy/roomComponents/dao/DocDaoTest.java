@@ -46,7 +46,4 @@ public class DocDaoTest extends TestCase {
         List<Document> myDocumentsLiveData = documentDao.getDocuments(1,1,1);
         assertEquals(myDocumentsLiveData.size(), 1);
     }
-
-    // TODO: test the connection between the sqlite database and the java code
-
 }

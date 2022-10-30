@@ -19,7 +19,6 @@ public class DocumentViewModel extends AndroidViewModel {
 
     public DocumentViewModel(@NonNull Application application, int idCat, int idYear, int idSeason) {
         super(application);
-        // TODO: add params to this function idYear, idCat, idSeason
         mRepository = new DocumentsRepository(application, idCat, idYear, idSeason);
         mDocuments = mRepository.getmAllDocuments();
     }
