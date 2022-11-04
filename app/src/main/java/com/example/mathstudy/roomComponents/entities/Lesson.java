@@ -18,7 +18,7 @@ public class Lesson {
     @NonNull
     @ColumnInfo(name = "idLesson")
     private int idLesson;
-    @ColumnInfo(name = "idSection")
+    @ColumnInfo(name = "idSection", index = true)
     private int idSection;
     @ColumnInfo(name = "lessonTitle")
     private String lessonTitle;

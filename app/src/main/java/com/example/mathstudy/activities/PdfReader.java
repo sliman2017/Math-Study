@@ -23,6 +23,8 @@ import java.net.URL;
 import javax.net.ssl.HttpsURLConnection;
 
 
+    // TODO: i will work to fix the data list showed in documents layout
+    //     and sending the correct data between activities instead of placeholder
     // TODO: i will change the schema of the database and the entity classes
     //      01: delete the season entity and table
     //      02: add section and lesson tables and connect them

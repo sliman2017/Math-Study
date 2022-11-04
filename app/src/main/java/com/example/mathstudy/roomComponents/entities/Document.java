@@ -79,11 +79,11 @@ public class Document {
         this.idyear = idyear;
     }
 
-    public int getidLesson() {
+    public int getIdLesson() {
         return idLesson;
     }
 
-    public void setidLesson(int idLesson) {
+    public void setIdLesson(int idLesson) {
         this.idLesson = idLesson;
     }
 

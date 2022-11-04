@@ -19,13 +19,17 @@
         <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/layout/activity_on_boarding.xml" value="0.22" />
         <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/layout/activity_onboarding_settings.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/layout/activity_pdf_reader.xml" value="0.22" />
+        <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/layout/activity_sections.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/layout/activity_splash_screen.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/layout/activity_years.xml" value="0.22" />
-        <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/layout/document_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/layout/document_item.xml" value="0.25" />
         <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/layout/firstpage_item.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/layout/section_item.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/layout/slides_layout.xml" value="0.22" />
         <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/layout/toolbar.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/layout/year_level_item.xml" value="0.22" />
+        <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1485" />
+        <entry key="..\:/Users/Sliman2015/AndroidStudioProjects/MathStudy/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1485" />
       </map>
     </option>
   </component>

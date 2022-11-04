@@ -39,7 +39,7 @@ public class Categories extends AppCompatActivity implements ActivityInitializer
         lessonsCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Categories.this, Documents.class);
+                Intent intent = new Intent(Categories.this, Sections.class);
                 intent.putExtra("lessons", 6);
                 startActivity(intent);
                 finish();

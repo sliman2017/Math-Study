@@ -5,6 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="13dp"
+        android:orientation="vertical">
+
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +40,7 @@
                 android:layout_height="80dp">
 
                 <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/documentIcon"
+                    android:id="@+id/sectionIcon"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_centerVertical="true"
@@ -39,26 +48,26 @@
                     android:src="@drawable/orangeicon" />
 
                 <TextView
-                    android:id="@+id/documentTitle"
+                    android:id="@+id/sectionTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="13dp"
-                    android:layout_toRightOf="@id/documentIcon"
-                    android:text="Document"
+                    android:layout_toRightOf="@id/sectionIcon"
+                    android:text="Section"
                     android:textColor="#595454"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/documentSubtitle"
+                    android:id="@+id/sectionSubtitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/documentTitle"
+                    android:layout_below="@id/sectionTitle"
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="1dp"
-                    android:layout_toRightOf="@id/documentIcon"
-                    android:text="40 Lessons, 180 Documents"
+                    android:layout_toRightOf="@id/sectionIcon"
+                    android:text="40 Lessons, 180 sections"
                     android:textColor="#7A7373"
                     android:textSize="15sp" />
             </RelativeLayout>
@@ -70,5 +79,13 @@
             android:layout_marginLeft="3dp"/>
     </androidx.appcompat.widget.LinearLayoutCompat>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/collapsed_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:visibility="gone" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
 
 </RelativeLayout>

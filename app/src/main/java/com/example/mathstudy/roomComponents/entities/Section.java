@@ -18,7 +18,7 @@ public class Section {
     @NonNull
     @ColumnInfo(name = "idSection")
     private int idSection;
-    @ColumnInfo(name = "idYear")
+    @ColumnInfo(name = "idYear", index = true)
     private int idYear;
     @ColumnInfo(name = "sectionTitle")
     private String sectionTitle;
@@ -29,9 +29,11 @@ public class Section {
     public Section() {
     }
 
-    public Section(int idSection, String sectionTitle) {
+    public Section(int idSection, int idYear, String sectionTitle, String sectionSubTitle) {
         this.idSection = idSection;
+        this.idYear = idYear;
         this.sectionTitle = sectionTitle;
+        this.sectionSubTitle = sectionSubTitle;
     }
 
     public int getIdSection() {
