@@ -13,12 +13,10 @@ import androidx.sqlite.db.SupportSQLiteDatabase;
 import com.example.mathstudy.roomComponents.dao.DocDao;
 import com.example.mathstudy.roomComponents.entities.Categorie;
 import com.example.mathstudy.roomComponents.entities.Document;
-import com.example.mathstudy.roomComponents.entities.Season;
+import com.example.mathstudy.roomComponents.entities.Section;
 import com.example.mathstudy.roomComponents.entities.Year;
 
-import java.io.File;
-
-@Database(entities = {Year.class, Season.class, Document.class, Categorie.class}, version = 1, exportSchema = false)
+@Database(entities = {Year.class, Section.class, Document.class, Categorie.class}, version = 1, exportSchema = false)
 public abstract class MathRoomDatabase extends RoomDatabase {
 
     private static volatile MathRoomDatabase INSTANCE;

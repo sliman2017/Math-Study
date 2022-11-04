@@ -15,9 +15,9 @@ import androidx.room.PrimaryKey;
                 @ForeignKey(entity = Year.class,
                         parentColumns = "idYear",
                         childColumns = "idYear"),
-                @ForeignKey(entity = Season.class,
-                        parentColumns = "idSeason",
-                        childColumns = "idSeason")
+                @ForeignKey(entity = Lesson.class,
+                        parentColumns = "idLesson",
+                        childColumns = "idLesson")
         })
 public class Document {
     @PrimaryKey(autoGenerate = true)
@@ -28,8 +28,8 @@ public class Document {
     private int idCategorie;
     @ColumnInfo(name = "idYear", index = true)
     private int idyear;
-    @ColumnInfo(name = "idSeason", index = true)
-    private int idSeason;
+    @ColumnInfo(name = "idLesson", index = true)
+    private int idLesson;
     @ColumnInfo(name = "title")
     private String title;
     @ColumnInfo(name = "subTitle")
@@ -44,11 +44,11 @@ public class Document {
     public Document() {
     }
 
-    public Document(int idDocument, int idCategorie, int idyear, int idSeason, String title, String subTitle, byte[] pic, String link) {
+    public Document(int idDocument, int idCategorie, int idyear, int idLesson, String title, String subTitle, byte[] pic, String link) {
         this.idDocument = idDocument;
         this.idCategorie = idCategorie;
         this.idyear = idyear;
-        this.idSeason = idSeason;
+        this.idLesson = idLesson;
         this.title = title;
         this.subTitle = subTitle;
         this.pic = pic;
@@ -79,12 +79,12 @@ public class Document {
         this.idyear = idyear;
     }
 
-    public int getIdSeason() {
-        return idSeason;
+    public int getidLesson() {
+        return idLesson;
     }
 
-    public void setIdSeason(int idSeason) {
-        this.idSeason = idSeason;
+    public void setidLesson(int idLesson) {
+        this.idLesson = idLesson;
     }
 
     public String getTitle() {

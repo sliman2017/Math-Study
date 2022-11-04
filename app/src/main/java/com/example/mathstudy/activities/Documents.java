@@ -44,7 +44,7 @@ public class Documents extends AppCompatActivity {
         initListeners();
         dataReceiver();
         // TODO: retrieve images from sqlite room database and put in the next line
-        t1Documents.addAll(getAllDocuments(mCategorie, mSchoolLevel, 1));
+        t1Documents.addAll(getAllDocuments(1, 1, 1));
         setUpDocsModels();
         fillRecyclerDocuments(t1Recycler, t1Documents);
         fillRecyclerDocuments(t2Recycler, t1Documents);
@@ -140,7 +140,7 @@ public class Documents extends AppCompatActivity {
 
     /**
      * this function will get all Document from database passed by the viewModel class(DocumentViewModel.class)
-     * and filtered by Categorie, School_Level and Season;
+     * and filtered by Categorie, School_Level and Section;
      * @param idCategorie
      * @param myLevel
      * @param idSeason

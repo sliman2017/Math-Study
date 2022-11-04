@@ -42,6 +42,7 @@ public class DocumentsMenuAdapter extends RecyclerView.Adapter<DocumentsMenuAdap
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), PdfReader.class);
+                intent.putExtra("documentLink", mDocuments.get(position).getLink());
                 v.getContext().startActivity(intent);
             }
         });
