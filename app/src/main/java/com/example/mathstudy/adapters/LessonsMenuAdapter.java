@@ -1,5 +1,6 @@
 package com.example.mathstudy.adapters;
 
+import android.app.Application;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,24 +10,30 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.transition.AutoTransition;
 import androidx.transition.TransitionManager;
 
 import com.example.mathstudy.R;
 import com.example.mathstudy.activities.Documents;
+import com.example.mathstudy.activities.Sections;
 import com.example.mathstudy.roomComponents.entities.Document;
 import com.example.mathstudy.roomComponents.entities.Lesson;
 import com.example.mathstudy.roomComponents.entities.Section;
+import com.example.mathstudy.viewModel.DocumentViewModel;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class LessonsMenuAdapter extends RecyclerView.Adapter<LessonsMenuAdapter.ViewHolder>{
 
     private ArrayList<Lesson> mLessons = new ArrayList<>();
+    private int idSection;
 
-    public LessonsMenuAdapter(ArrayList<Lesson> Sections){
-        this.mLessons = Sections;
+    public LessonsMenuAdapter(ArrayList<Lesson> lessons){
+        this.mLessons = lessons;
     }
     @NonNull
     @Override
@@ -46,7 +53,7 @@ public class LessonsMenuAdapter extends RecyclerView.Adapter<LessonsMenuAdapter.
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(), Documents.class);
-                intent.putExtra("Section_id", mLessons.get(position).getIdSection());
+                intent.putExtra("lesson_id", mLessons.get(position).getIdLesson());
                 v.getContext().startActivity(intent);
             }
         });
@@ -103,4 +110,7 @@ public class LessonsMenuAdapter extends RecyclerView.Adapter<LessonsMenuAdapter.
         }
 
     }
+
+
+
 }

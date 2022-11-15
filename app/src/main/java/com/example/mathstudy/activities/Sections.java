@@ -2,6 +2,8 @@ package com.example.mathstudy.activities;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.mathstudy.R;
+import com.example.mathstudy.adapters.LessonsMenuAdapter;
 import com.example.mathstudy.adapters.SectionsMenuAdapter;
 import com.example.mathstudy.interfaces.ItemClickListener;
 import com.example.mathstudy.roomComponents.entities.Lesson;
@@ -38,11 +41,11 @@ public class Sections extends AppCompatActivity {
         initViews();
         initListeners();
         dataReceiver();
-        // TODO: retrieve images from sqlite room database and put in the next line
-        mSections.addAll(getAllSectionsAndLessons(1, 1).getSectionList());
-        mLessons.addAll(getAllSectionsAndLessons(1,1).getLessonList());
+        // Fixme: i used the data placeholder to test the app, i have to change it when check that is work.
+        mSections.addAll(getmSections(1));
+        Log.v("lessonsSize: ", " "+mLessons.size());
         setUpDocsModels();
-        fillRecyclerSections(sectionRecycler, mSections, mLessons);
+        fillRecyclerSections(sectionRecycler, mSections);
     }
 
 
@@ -51,6 +54,7 @@ public class Sections extends AppCompatActivity {
      */
     private void initViews() {
         setContentView(R.layout.activity_sections);
+        documentViewModel = new DocumentViewModel(getApplication());
         sectionRecycler = (RecyclerView) findViewById(R.id.section_recycler);
     }
 
@@ -58,7 +62,6 @@ public class Sections extends AppCompatActivity {
      * this function will contain all the listeners in this activity
      */
     private void initListeners(){
-
     }
 
     /**
@@ -87,8 +90,8 @@ public class Sections extends AppCompatActivity {
      * @param section will be the list of Sections for the trimester_1, trimester_2
      *                  or trimester_3 in the chosen Categorie.
      */
-    public void fillRecyclerSections(RecyclerView recyclerView, ArrayList<Section> section, ArrayList<Lesson> lesson){
-        SectionsMenuAdapter adapter = new SectionsMenuAdapter(section, lesson);
+    public void fillRecyclerSections(RecyclerView recyclerView, ArrayList<Section> section){
+        SectionsMenuAdapter adapter = new SectionsMenuAdapter(section);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
     }
@@ -107,53 +110,11 @@ public class Sections extends AppCompatActivity {
 
     }
 
-    /**
-     * this function will get all Sections from database passed by the viewModel class(DocumentViewModel.class)
-     * and filtered by idYear;
-     * @param idYear
-     * @return it convert the liveData to arrayList and return it.
-     */
-
-
-    public MyListPair getAllSectionsAndLessons(int idYear, int idSection){
-        MyListPair myListPair;
-        documentViewModel = new DocumentViewModel(getApplication(), idYear, idSection);
-        List<Section> sectionsList = documentViewModel.getmAllSections();
-        List<Lesson> lessonsList = documentViewModel.getmAllLessons();
+    public ArrayList<Section> getmSections(int idYear){
+        List<Section> sectionsList = documentViewModel.getmeSections(idYear);
         ArrayList<Section> mSectionArrayList = new ArrayList<>();
-        ArrayList<Lesson> mLessonArrayList = new ArrayList<>();
         mSectionArrayList.addAll(sectionsList);
-        mLessonArrayList.addAll(lessonsList);
-        myListPair = new MyListPair(mSectionArrayList, mLessonArrayList);
-        return myListPair;
+        return mSectionArrayList;
     }
 
-    public class MyListPair{
-        private ArrayList<Section> sectionList;
-        private ArrayList<Lesson> lessonList;
-
-        public MyListPair() {
-        }
-
-        public MyListPair(ArrayList<Section> sectionList, ArrayList<Lesson> lessonList) {
-            this.sectionList = sectionList;
-            this.lessonList = lessonList;
-        }
-
-        public ArrayList<Section> getSectionList() {
-            return sectionList;
-        }
-
-        public void setSectionList(ArrayList<Section> sectionList) {
-            this.sectionList = sectionList;
-        }
-
-        public ArrayList<Lesson> getLessonList() {
-            return lessonList;
-        }
-
-        public void setLessonList(ArrayList<Lesson> lessonList) {
-            this.lessonList = lessonList;
-        }
-    }
 }

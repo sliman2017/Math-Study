@@ -20,6 +20,11 @@ public class DocumentsRepository {
     private List<Section> mAllSections;
     private List<Lesson> mAllLessons;
 
+    public DocumentsRepository(Application application) {
+        MathRoomDatabase database = MathRoomDatabase.getDatabase(application);
+        mDocDao = database.DocDao();
+    }
+
     public DocumentsRepository(Application application, int idCat, int idYear, int idSection) {
         MathRoomDatabase database = MathRoomDatabase.getDatabase(application);
         mDocDao = database.DocDao();
@@ -54,5 +59,14 @@ public class DocumentsRepository {
 
     public List<Lesson> getmAllLessons(){
         return mAllLessons;
+    }
+
+    public List<Lesson> getmeLessons(int idSection){
+        mAllLessons = mDocDao.getLessons(idSection);
+        return mAllLessons;
+    }
+    public List<Section> getmeSections(int idYear){
+        mAllSections = mDocDao.getSections(idYear);
+        return mAllSections;
     }
 }

@@ -34,8 +34,8 @@ public abstract class MathRoomDatabase extends RoomDatabase {
                             .fallbackToDestructiveMigration()
                             .addCallback(roomCallback)
                             .build();
-                       Log.v("mathRoomDatabase: ", " slimane: "+INSTANCE.DocDao().getDocuments(1,1,1).size());
-                       Log.v("mathRoomDatabase: ", " slimane2: "+INSTANCE.DocDao().getDocuments(1,1,1).get(1).getTitle());
+                       Log.v("mathRoomDatabase: ", " slimane: "+INSTANCE.DocDao().getDocuments(6,1,1).size());
+                       Log.v("mathRoomDatabase: ", " slimane2: "+INSTANCE.DocDao().getDocuments(6,1,1).get(1).getTitle());
                        // Fixme: From this point of function by using log.v we ensure that the database is connected and return data
                 }
             }

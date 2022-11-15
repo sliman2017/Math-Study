@@ -12,12 +12,15 @@ import com.example.mathstudy.roomComponents.entities.Section;
 
 import java.util.List;
 
-public class DocumentViewModel extends AndroidViewModel {
-
-    private DocumentsRepository mRepository;
+public class DocumentViewModel extends AndroidViewModel {    private DocumentsRepository mRepository;
     private List<Document> mDocuments;
     private List<Section> mSections;
     private List<Lesson> mLessons;
+
+    public DocumentViewModel(@NonNull Application application) {
+        super(application);
+        mRepository = new DocumentsRepository(application);
+    }
 
     public DocumentViewModel(@NonNull Application application, int idCat, int idYear, int idSection) {
         super(application);
@@ -48,4 +51,16 @@ public class DocumentViewModel extends AndroidViewModel {
     public List<Lesson> getmAllLessons(){
         return mLessons;
     }
+
+    public List<Lesson> getmeLessons(int idSection){
+        mLessons = mRepository.getmeLessons(idSection);
+        return mLessons;
+    }
+
+    public List<Section> getmeSections(int idYear){
+        mSections = mRepository.getmeSections(idYear);
+        return mSections;
+    }
+
+
 }
