@@ -1,5 +1,6 @@
 package com.example.mathstudy.activities;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,8 +32,8 @@ public class Sections extends AppCompatActivity {
     private ArrayList<Lesson> mLessons = new ArrayList<>();
     private RecyclerView sectionRecycler;
     private ItemClickListener itemClickListener;
-    private int mSchoolLevel;
-    private int mCategorie;
+    private int mSchoolLevelID;
+    public static int mCategorieID;
     private DocumentViewModel documentViewModel;
 
     @Override
@@ -44,7 +45,7 @@ public class Sections extends AppCompatActivity {
         // Fixme: i used the data placeholder to test the app, i have to change it when check that is work.
         mSections.addAll(getmSections(1));
         Log.v("lessonsSize: ", " "+mLessons.size());
-        setUpDocsModels();
+        //setUpDocsModels();
         fillRecyclerSections(sectionRecycler, mSections);
     }
 
@@ -103,10 +104,10 @@ public class Sections extends AppCompatActivity {
     public void dataReceiver(){
         Bundle extras = getIntent().getExtras();
         if(extras !=null) {
-            mCategorie = extras.getInt("lessons");
+            mCategorieID = extras.getInt("categorie_id");
         }
         SharedPreferences schoolLevel = getSharedPreferences("schoolLevel", MODE_PRIVATE);
-        mSchoolLevel = schoolLevel.getInt("mySchoolLevel", 0);
+        mSchoolLevelID = schoolLevel.getInt("mySchoolLevel", 0);
 
     }
 

@@ -15,7 +15,7 @@ import com.example.mathstudy.interfaces.ActivityInitializer;
 public class Categories extends AppCompatActivity implements ActivityInitializer {
 
     private CardView lessonsCardView, exercicesCardView;
-    private int myLevel;
+    private int mLevelID;
     SharedPreferences schoolSharedPref;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,8 +23,7 @@ public class Categories extends AppCompatActivity implements ActivityInitializer
         initViews();
         initListeners();
         schoolSharedPref= getSharedPreferences("schoolLevel", MODE_PRIVATE);
-        myLevel = schoolSharedPref.getInt("mySchoolLevel", 0 );
-        Log.v("shcoolLevel", "the level is: " + myLevel);
+        mLevelID = schoolSharedPref.getInt("mySchoolLevel", 0 );
     }
 
     @Override
@@ -39,10 +38,11 @@ public class Categories extends AppCompatActivity implements ActivityInitializer
         lessonsCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Categories.this, Sections.class);
-                intent.putExtra("lessons", 6);
-                startActivity(intent);
+                Intent sectionIntent = new Intent(Categories.this, Sections.class);
+                sectionIntent.putExtra("categorie_id", 6);
+                startActivity(sectionIntent);
                 finish();
+
             }
         });
     }
@@ -63,7 +63,7 @@ public class Categories extends AppCompatActivity implements ActivityInitializer
         // Fetching the stored data
         // from the SharedPreference
         schoolSharedPref= getSharedPreferences("schoolLevel", MODE_PRIVATE);
-        myLevel = schoolSharedPref.getInt("mySchoolLevel", 0 );
+        mLevelID = schoolSharedPref.getInt("mySchoolLevel", 0 );
 
     }
 }
